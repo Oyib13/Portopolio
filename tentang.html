@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(270deg, #e0eafc, #cfdef3, #4f8cff, #e0eafc);
+      background-size: 400% 400%;
+      animation: gradientMove 8s ease-in-out infinite, fadeInBody 1.2s ease-in forwards;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    header {
+      text-align: center;
+      padding: 40px 0 20px 0;
+      background: #0008ff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #4f8cff;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 16px rgba(79,140,255,0.15);
+      animation: floatPhoto 3.2s ease-in-out infinite alternate;
+    }
+    @keyframes floatPhoto {
+      0% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-18px) scale(1.04); }
+      100% { transform: translateY(0px) scale(1); }
+    }
+    
+    header h1 {
+      margin: 10px 0 5px 0;
+      font-size: 2.2em;
+      color: #4f8cff;
+      letter-spacing: 2px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #4f8cff;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      animation: typing 2.2s steps(22, end), blink-caret 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 16.5ch; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #4f8cff; }
+    }
+    
+    header p {
+      margin: 2px 0;
+      color: #555;
+      font-size: 1.1em;
+    }
+    nav {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    nav a {
+      color: #4f8cff;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: color 0.2s;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background: #4f8cff;
+      color: #fff;
+    }
+    #tentang {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(79,140,255,0.08);
+  padding: 32px 40px;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+    }
+    #tentang:hover {
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 0 32px 8px #4f8cff66, 0 8px 32px rgba(79,140,255,0.18);
+  filter: brightness(1.08) saturate(1.2);
+    }
+    
+    #tentang h2 {
+      color: #4f8cff;
+      margin-top: 0;
+      letter-spacing: 1px;
+    }
+    #tentang ul {
+      list-style: disc inside;
+      padding-left: 0;
+    }
+    #tentang li {
+      margin-bottom: 8px;
+      font-size: 1.08em;
+    }
+    footer {
+      text-align: center;
+      padding: 18px 0;
+      background: #4f8cff;
+      color: #fff;
+      margin-top: 40px;
+      font-size: 1em;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 600px) {
+      #tentang {
+        padding: 18px 8px;
+      }
+      header img {
+        width: 90px;
+        height: 90px;
+      }
+      header h1 {
+        font-size: 1.3em;
+      }
+    }
+    /* Animasi sentuh pada link navigasi */
+    nav a {
+      /* ...existing code... */
+      position: relative;
+      overflow: hidden;
+    }
+    nav a:active {
+      color: #fff;
+      background: #1a73e8;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* Efek sentuh pada section (misal: card bounce) */
+    section:active {
+      animation: bounce 0.3s;
+    }
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      30% { transform: scale(0.97); }
+      60% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+  </style>
+    </style>
+</head>
+<body>
+     <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+    </section>
+    <section id="pendidikan">
+        <h2>Pendidikan</h2>
+        <ul>
+            <li>SDN 2 Berangah</li>
+            <li>SMPN 6 Kopang</li>
+            <li>SMK 1 kopang</li>
+            <li>STMIK LOMBOK</li>
+        </ul>
+
+    <section id="pengalaman">
+        <h2>Pengalaman</h2>
+        <ul>
+            <li>Pernah magang di pt Bumi sentosa</li>
+        </ul>
+
+    <section id="kemampuan">
+        <h2>Kemampuan</h2>
+        <ul>
+            <li>Menyalakan Korek api</li>
+        </ul>
+    </section>
+
+    <section id="penghargaan">
+        <h2>Penghargaan</h2>
+        <ul>
+            <li>Sertifikat teknik instalasi listrik</li>
+        </ul>
+    </section>
+
+    <section id="hobi">
+        <h2>Hobi</h2>
+        <p>Mendaki gunung, mancing , bermain futsal.</p>
+    </section>
+</body>
+</body>
+</html>
