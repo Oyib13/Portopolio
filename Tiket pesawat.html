@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from pemesanan tiket pesawat</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>FROM PEMESANAN TIKET PESAWAT</h1>
+
+    <form>
+        <fieldset>
+            <legend>Informasi Penumpang</legend>
+            Nama Lengkap: <input type="tekt" name="nama" placeholder="Masukan nama lengkap"><br>
+            Nomer identitas (KTP/PASPOR) : <input type="tekt" name="nama" placeholder="Masukan nomer identitas"><br><br>
+            Jenis Kelamin:
+            <input type="radio" name="gender" value="laki-laki" checked>laki-laki
+            <input type="radio" name="gender" value="Perempuan">perempuan<br><br>
+            Alamat Email: <input type="email" name="emial" placeholder="Masukan Email"><br><br>
+            Nomer Telpon: <input type="text" name="telepon" placeholder="Masukan Nomer telpon"><br><br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Informasi Penerbangan</legend>
+            <label>Bandara Keberangkatan:
+                <select name="bandara_keberangkatan">
+                    <option value="Soekarno-Hatta (CGK)">Soekarno-Hatta (CGK)</option>
+                </select>
+            </label><br><br>
+
+            <label>Bandara Tujuan:
+                <select name="bandara_tujuan">
+                    <option value="Soekarno-Hatta (CGK)">Soekarno-Hatta (CGK)</option>
+                </select>
+            </label><br><br>
+
+            <label>Tanggal Keberangkatan:
+                <input type="date" name="tanggal_keberangkatan" value="2024-09-26" required>
+            </label><br><br>
+
+            <label>Tanggal Kepulangan (opsional):
+                <input type="date" name="tanggal_kepulangan" value="2024-09-26">
+            </label><br><br>
+
+            <label>Jumlah Penumpang:
+                <input type="number" name="jumlah_penumpang" value="1" min="1">
+            </label><br><br>
+
+            <label>Kelas Penerbangan:
+                <select name="kelas_penerbangan">
+                    <option value="Ekonomi">Ekonomi</option>
+                    <option value="Bisnis">Bisnis</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Metode Pembayaran</legend>
+            <label><input type="radio" name="metode_pembayaran" value="Kartu Kredit"> Kartu Kredit</label><br>
+            <label><input type="radio" name="metode_pembayaran" value="Transfer Bank"> Transfer Bank</label><br>
+            <label><input type="radio" name="metode_pembayaran" value="E-Wallet"> E-Wallet (GoPay, OVO, dll.)</label>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Pesan Tiket</button>
+    </form>
+</body>
+</html>
