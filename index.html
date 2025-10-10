@@ -3,112 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Mahasiswa </title>
+    <title>Pantai Lombok - Destinasi Pantai</title>
+    <link rel="stylesheet" href="/style.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f9f9f9, #dbeafe);
+        :root{
+            --bg:#f2fbff; /* light sky */
+            --accent:#00aaff; /* ocean blue */
+            --accent-dark:#0077a3; /* deep ocean */
+            --muted:#536b74;
+            --card:#ffffff;
+            --radius:14px;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
         }
-        header {
-            text-align: center;
-            background: linear-gradient(135deg, #003366, #0066cc);
-            color: white;
-            padding: 40px 20px;
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:#2b2b2b;line-height:1.5}
+    .header{display:flex;align-items:center;gap:12px;padding:18px 24px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:white}
+        .header .icon i{font-size:26px}
+        .header-title{font-weight:700;font-size:1.25rem}
+    .logo{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.25)}
+        .navbar{display:flex;gap:16px;padding:12px 24px;background:rgba(0,0,0,0.03)}
+        .navbar a{color:var(--accent-dark);text-decoration:none;font-weight:600}
+    .hero{
+            padding:96px 24px;
+            text-align:center;
+            background-image: url('image.png');
+            background-size:cover;
+            background-position:center;
+            position:relative;
+            color:#fff;
+            border-radius:12px;
+            overflow:hidden;
         }
-        header img {
-            width: 130px;
-            border-radius: 50%; 
-            border: 4px solid #ffcc00;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        /* dark overlay so text remains readable on any photo */
+        .hero::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:linear-gradient(180deg, rgba(0,0,0,0.36), rgba(0,0,0,0.24));
+            z-index:0;
         }
-        header h1 {
-            margin: 15px 0 5px;
+        .hero h1, .hero p{position:relative;z-index:1}
+        .hero h1{font-size:2.25rem;margin:0 0 8px;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,0.55)}
+        .hero p{margin:0;color:rgba(255,255,255,0.92)}
+    .activity-section, .gallery-section, .contact-section{padding:28px 24px}
+        .activities{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+    .activity{background:var(--card);padding:18px;border-radius:var(--radius);flex:1 1 220px;min-width:200px;box-shadow:0 6px 18px rgba(4,45,72,0.06)}
+    .activity i{font-size:28px;color:var(--accent)}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:12px}
+    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+        .contact-info{display:flex;gap:16px;flex-wrap:wrap}
+        .details{flex:1 1 260px}
+    .map{flex:2 1 320px}
+        .info-item{margin:8px 0;color:var(--muted)}
+        footer{padding:18px 24px;text-align:center;color:var(--muted);font-size:.9rem}
+        @media (max-width:640px){
+            .header{padding:12px}
+            .hero{padding:32px 12px}
+            .gallery-grid img{height:100px}
         }
-        header p {
-            margin: 5px 0;
-        }
-        header a {
-            color: #ffcc00;
-            margin: 0 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        nav {
-            background: #c3a22a;
-            padding: 12px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #003366;
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            background: #003366;
-            color: white;
-        }
-        section {
-            padding: 20px;
-            background: rgb(145, 136, 136);
-            margin: 20px auto;
-            border-radius: 15px;
-            max-width: 800px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        h2 {
-            color: #0066cc;
-            border-left: 6px solid #ffcc00;
-            padding-left: 10px;
-        }
-        ul {
-            list-style: square;
-            padding-left: 20px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-
     </style>
 </head>
 <body>
-
-    <header>
-        <img src="foto.jpg/foto.jpg.jpg" width="100 px" alt="Foto Mahasiswa">
-        <h1>Ismail Toyyib</h1>
-        <p>NIM :TI2124008 | Jurusan :Teknik Informatika</p>
-        <p>
-            <a href="https://www.tiktok.com/@_oyib18_">TikTok</a> | 
-            <a href="https://github.com/Oyib13?tab=repositories">Github</a> |  
-            <a href="https://www.instagram.com/_oyiib13_/">instagram</a>
-        </p>
-</header>
-<body>
-      <nav>
-        <a href="index.html">Beranda</a>
-        <a href="tentang.html">Tentang</a>
+    <div class="header" role="banner">
+        <span class="icon" aria-hidden="true"><i class="fa-solid fa-umbrella-beach"></i></span>
+        <span class="header-title">Gili Trawangan Beach</span>
+        <img class="logo" src="image copy 2.png" alt="Logo Pantai"/>
+    </div>
+    <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="aktifitas.html">Aktivitas</a>
+        <a href="galeri.html">Galeri</a>
         <a href="kontak.html">Kontak</a>
     </nav>
-
-    
-    <section id="beranda">
-        <h2>Selamat Datang di Halaman Portofolio Saya</h2>
-        <p>Halo ! Nama saya Ismail Toyyib, mahasiswa Teknik Informatika di STMIK Lombok. Saya memiliki minat yang besar dalam pengembangan perangkat lunak dan teknologi informasi. Di halaman ini, Anda dapat menemukan informasi tentang latar belakang pendidikan, pengalaman kerja, kemampuan teknis, penghargaan yang telah saya terima, serta hobi dan minat saya.</p>
+    <section class="hero" role="region" aria-label="Intro">
+        <h1>Welcome to Gili Trawangan Beach</h1>
+        <p>Nikmati pasir putih, ombak tenang, dan matahari yang hangat — destinasi pantai terbaik di Lombok.</p>
+    </section>
+    <section class="activity-section" aria-labelledby="aktivitas-heading">
+        <h2 id="aktivitas-heading">Aktivitas Pantai</h2>
+        <div class="activities">
+            <div class="activity" role="article">
+                <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
+                <h3>Berenang & Snorkeling</h3>
+                <p>Jelajahi kehidupan laut yang kaya dan terumbu karang dengan pemandu lokal.</p>
+            </div>
+            <div class="activity" role="article">
+                <i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i>
+                <h3>Bersantai di Pantai</h3>
+                <p>Berjemur di pasir putih, menikmati sunset, atau piknik bersama keluarga.</p>
+            </div>
+            <div class="activity" role="article">
+                <i class="fa-solid fa-ship" aria-hidden="true"></i>
+                <h3>Tur Perahu</h3>
+                <p>Perahu singkat ke spot snorkeling, melihat pemandangan pesisir dari laut.</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading">Galeri Pantai</h2>
+        <div class="gallery-grid">
+            <img src="/image.png" alt="Pantai & ombak tenang" />
+            <img src="/image copy 3.png" alt="Sunset di pantai" />
+            <img src="/image copy.png" alt="Kegiatan snorkeling" />
+            <img src="/image copy 5.png" alt="Perahu tradisional di laut" />
+            <img src="/image copy 4.png" alt="Pasir putih dan batu karang" />
+            <img src="/image copy 2.png" alt="Pengunjung menikmati pantai" />
+        </div>
+    </section>
+    <section class="contact-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Hubungi Kami - Gili Trawangan</h2>
+        <div class="contact-info">
+            <div class="details">
+                <h3>Informasi Kontak</h3>
+                <div class="info-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Alamat:Gili Trawangan,Kec.Pemenang Lombok Utara, NTB, Indonesia</div>
+                <div class="info-item"><i class="fa-solid fa-phone" aria-hidden="true"></i> Telepon: +62 811-5555-2025</div>
+                <div class="info-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email: info@Gili Trawangan.id</div>
+            </div>
+            <div class="map">
+            <iframe
+                width="100%" height="360" style="border:0; border-radius:12px"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.82138368222!2d116.0317422!3d-8.3505956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd13f5d1e2b9bdf%3A0x3c8a1f4a79f4e6b8!2sGili%20Trawangan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Peta Gili Trawangan"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        © 2025 Gili Trawangan - Lombok, Indonesia. All rights reserved.
+    </footer>
 </body>
 </html>
